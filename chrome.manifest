@@ -1,0 +1,3 @@
+content  savelinkmenus         chrome/content/
+locale   savelinkmenus  en-US  chrome/locale/en-US/
+locale   savelinkmenus  ja     chrome/locale/ja/

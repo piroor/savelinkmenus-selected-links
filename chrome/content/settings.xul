@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE vbox SYSTEM "chrome://savelinkmenus/locale/settings.dtd">
+
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <setting pref="extensions.savelinkmenus.savepage.enabled" type="bool" title="&savePage.label;" />
+    <setting pref="extensions.savelinkmenus.savelink.enabled" type="bool" title="&saveLink.label;" />
+</vbox>

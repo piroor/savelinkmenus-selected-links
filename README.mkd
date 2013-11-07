@@ -1,0 +1,15 @@
+### About ###
+Adds 'Save Link' and 'Save Page' menus
+
+### License ###
+MPL/GPL/LGPL triple license  
+See the `LICENSE.txt`.  
+
+### ChangeLog ###
+##### 0.1.1 (December 26, 2012) #####
+Fixed the observer bugs, Thanks to Mr. Maier
+Fixed to setup the prefs in startup()
+Fixed the issue about contentType and mimeType
+
+##### 0.1.0 (December 2, 2012) #####
+The first public version
