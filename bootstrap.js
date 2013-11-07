@@ -27,6 +27,7 @@ let SaveLinkMenus = {
         let branch = Services.prefs.getDefaultBranch('extensions.savelinkmenus.');
         branch.setBoolPref('savepage.enabled', true);
         branch.setBoolPref('savelink.enabled', true);
+        branch.setBoolPref('saveselectedlinks.enabled', true);
     },
 
     init: function() {
@@ -122,6 +123,54 @@ let SaveLinkMenus = {
                         }
 
                         self._saveURI(aWindow, uri);
+                    }
+            );
+        } 
+
+        // See SelectionHandler
+        if (this._branch.getBoolPref('saveselectedlinks.enabled')) {
+            let selectionContext = {
+                matches: function(aElement, aX, aY) {
+                    return aWindow.SelectionHandler.shouldShowContextMenu(aX, aY);
+                }
+            };
+            this._contextMenuIds['SaveSelectedLinks'] = contextmenus.add(
+                    tr('SaveSelectedLinksMenu'),
+                    selectionContext,
+                    function(aTarget) {
+                        let document = aTarget.ownerDocument;
+                        let selection = document.defaultView.getSelection();
+                        let links = [];
+                        let linkElements = [];
+                        for (let i = 0, maxi = selection.rangeCount; i < maxi; i++) {
+                            let range = selection.getRangeAt(i);
+                            let fragment = range.cloneContents();
+                            Array.forEach(fragment.querySelectorAll('a[href]'), function(aLink) {
+                                if (links.indexOf(aLink.href) < 0) {
+                                    links.push(aLink.href);
+                                    linkElements.push(aLink);
+                                }
+                            });
+                        }
+                        if (!links.length)
+                            return;
+
+                        let uris = links.map(function(aURISpec) {
+                            return Services.io.newURI(aURISpec, null, null);
+                        });
+
+                        let cannotSave = uris.some(function(aURI, aIndex) {
+                            let linkElement = linkElements[aIndex];
+                            return !self._checkURI(aWindow, aURI, linkElement.nodePrincipal);
+                        });
+                        if (cannotSave) {
+                            showToast(aWindow, tr('FailedMessage'));
+                            return;
+                        }
+
+                        uris.forEach(function(aURI) {
+                            self._saveURI(aWindow, aURI);
+                        });
                     }
             );
         }

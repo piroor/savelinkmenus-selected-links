@@ -5,4 +5,5 @@
 <vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
     <setting pref="extensions.savelinkmenus.savepage.enabled" type="bool" title="&savePage.label;" />
     <setting pref="extensions.savelinkmenus.savelink.enabled" type="bool" title="&saveLink.label;" />
+    <setting pref="extensions.savelinkmenus.saveselectedlinks.enabled" type="bool" title="&saveSelectedLinks.label;" />
 </vbox>
