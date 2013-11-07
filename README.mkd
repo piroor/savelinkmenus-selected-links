@@ -1,11 +1,14 @@
 ### About ###
-Adds 'Save Link' and 'Save Page' menus
+Adds 'Save Link', 'Save Selected Links' and 'Save Page' menus
 
 ### License ###
 MPL/GPL/LGPL triple license  
 See the `LICENSE.txt`.  
 
 ### ChangeLog ###
+##### 0.2.0 (November 7, 2013) #####
+Add 'Save Selected Links' feature
+
 ##### 0.1.1 (December 26, 2012) #####
 Fixed the observer bugs, Thanks to Mr. Maier
 Fixed to setup the prefs in startup()
