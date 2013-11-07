@@ -17,7 +17,7 @@
         <em:localized>
             <Description>
                 <em:locale>ja</em:locale>
-                <em:name>Save Link Menus</em:name>
+                <em:name>Save Link Menus with Save Selected Links</em:name>
                 <em:description>「リンク先を保存」「選択範囲のリンクを保存」と「ページを保存」メニューを追加します</em:description>
                 <em:creator>TakaChan</em:creator>
                 <em:developer>YUKI "Piro" Hiroshi</em:developer>
