@@ -1,5 +1,9 @@
 ### About ###
-Adds 'Save Link', 'Save Selected Links' and 'Save Page' menus
+Adds 'Save Link', 'Save Selected Links' and 'Save Page' menus.
+
+This is a modified version of 'Save Link Menus'.
+Original version is:
+https://addons.mozilla.org/android/addon/save-link-menus/
 
 ### License ###
 MPL/GPL/LGPL triple license  
