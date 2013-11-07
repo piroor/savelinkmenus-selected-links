@@ -6,19 +6,21 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>savelinkmenus-selected-links@piro.sakura.ne.jp</em:id>
         <em:type>2</em:type>
-        <em:name>Save Link Menus</em:name>
-        <em:version>0.1.1</em:version>
+        <em:name>Save Link Menus with Save Selected Links</em:name>
+        <em:version>0.2</em:version>
         <em:bootstrap>true</em:bootstrap>
-        <em:description>Adds 'Save Link' and 'Save Page' menus</em:description>
+        <em:description>Adds 'Save Link', 'Save Selected Links' and 'Save Page' menus</em:description>
         <em:creator>TakaChan</em:creator>
+        <em:developer>YUKI "Piro" Hiroshi</em:developer>
         <em:optionsURL>chrome://savelinkmenus/content/settings.xul</em:optionsURL>
 
         <em:localized>
             <Description>
                 <em:locale>ja</em:locale>
                 <em:name>Save Link Menus</em:name>
-                <em:description>「リンク先を保存」と「ページを保存」メニューを追加します</em:description>
+                <em:description>「リンク先を保存」「選択範囲のリンクを保存」と「ページを保存」メニューを追加します</em:description>
                 <em:creator>TakaChan</em:creator>
+                <em:developer>YUKI "Piro" Hiroshi</em:developer>
             </Description>
         </em:localized>
 
