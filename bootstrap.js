@@ -141,28 +141,24 @@ let SaveLinkMenus = {
                         let document = aTarget.ownerDocument;
                         let selection = document.defaultView.getSelection();
                         let links = [];
-                        let linkElements = [];
+                        let uris = [];
+                        let cannotSave = false;
                         for (let i = 0, maxi = selection.rangeCount; i < maxi; i++) {
                             let range = selection.getRangeAt(i);
                             let fragment = range.cloneContents();
                             Array.forEach(fragment.querySelectorAll('a[href]'), function(aLink) {
                                 if (links.indexOf(aLink.href) < 0) {
+                                    let uri = Services.io.newURI(aLink.href, null, null);
+                                    if (!self._checkURI(aWindow, aURI, aLink.nodePrincipal))
+                                        cannotSave = true;
                                     links.push(aLink.href);
-                                    linkElements.push(aLink);
+                                    uris.push(uri);
                                 }
                             });
                         }
                         if (!links.length)
                             return;
 
-                        let uris = links.map(function(aURISpec) {
-                            return Services.io.newURI(aURISpec, null, null);
-                        });
-
-                        let cannotSave = uris.some(function(aURI, aIndex) {
-                            let linkElement = linkElements[aIndex];
-                            return !self._checkURI(aWindow, aURI, linkElement.nodePrincipal);
-                        });
                         if (cannotSave) {
                             showToast(aWindow, tr('FailedMessage'));
                             return;
