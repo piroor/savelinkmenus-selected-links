@@ -5,6 +5,8 @@ This is a modified version of 'Save Link Menus'.
 Original version is:
 https://addons.mozilla.org/android/addon/save-link-menus/
 
+This project is obsolete and not maintained anymore.
+
 ### License ###
 MPL/GPL/LGPL triple license  
 See the `LICENSE.txt`.  
